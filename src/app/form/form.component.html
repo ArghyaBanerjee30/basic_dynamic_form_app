@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="card mt-3">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Post Form</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <input class="form-control mb-3" 
+            [(ngModel)]="title" 
+            placeholder="Post Title">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <textarea class="form-control mb-3" 
+            [(ngModel)]="details"
+            placeholder="Post Details" 
+            style="height: 200px; width: 100%;"></textarea>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <input class="form-control mb-3" 
+            [(ngModel)]="imageUrl" 
+            placeholder="Post Image URL">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <input class="form-control mb-3" 
+            [(ngModel)]="postUrl" 
+            placeholder="Post URL">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <div class="form-check">
+                <input class="form-check-input" 
+                type="checkbox" 
+                id="exampleCheckbox" 
+                [(ngModel)]="agree">
+
+                <label class="form-check-label" 
+                for="exampleCheckbox">
+                    Add Background
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <h1 class="text-center" [class.highlight]="agree">{{ title }}</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <p class="text-center"> {{ details }}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <img [src]="imageUrl" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-3">
+            <a class="text-center" [href]="postUrl" target="_blank" [style.display]="postUrl ? 'block' : 'none'">More Details</a>
+        </div>
+    </div>
+</div>
